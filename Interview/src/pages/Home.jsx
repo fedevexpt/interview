@@ -1,9 +1,8 @@
+import { Link } from "react-router-dom";
 function Home() {
     return (
         <div>
-            <header>
-                <h1>LOGO</h1>
-            </header>
+            <Link to="/SignUp">회원가입페이지로 이동</Link>
         </div>
     );
 }
