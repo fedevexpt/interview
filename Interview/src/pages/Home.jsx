@@ -1,6 +1,8 @@
 import CategoryCard from "../components/CategoryCard";
 import Header from "../components/Header";
 import RandomBtn from "../components/RandomBtn";
+import Footer from "../components/Footer";
+
 function Home() {
     const Categories = [
         {
@@ -9,8 +11,14 @@ function Home() {
             count: 0,
             path: "/practice/TechQuestion",
         },
-        { icon: "🌻", title: "언어", count: 0 },
-        { icon: "🌼", title: "CS", count: 0 },
+
+        {
+            icon: "🌻",
+            title: "언어",
+            count: 0,
+            path: "/practice/LanguageQuestion",
+        },
+        { icon: "🌼", title: "CS", count: 0, path: "/practice/EtcQuestion" },
         { icon: "🌹", title: "기타", count: 0 },
     ];
 
@@ -35,6 +43,7 @@ function Home() {
                     />
                 ))}
             </div>
+            <Footer />
         </div>
     );
 }

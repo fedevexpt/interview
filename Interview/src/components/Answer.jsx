@@ -9,11 +9,11 @@ function Answer({ answer }) {
     };
     return (
         <form className="my-4 flex flex-col">
-            <label>내 답변</label>
+            <label className="my-2">내 답변</label>
             {!submit ? (
                 <>
                     <input
-                        className="h-[50px] border border-[#eeeeee] px-2"
+                        className="w-[100%] h-[100px] border border-[#eeeeee] px-2"
                         type="text"
                         placeholder="내 답변을 작성하세요."
                         value={input}

@@ -2,7 +2,7 @@ import { supabase } from "../supabaseClient";
 import { useEffect, useState } from "react";
 import Answer from "./Answer";
 
-function QuestionCard({ selected }) {
+function QuestionCard({ category, selected }) {
     const [questions, setQuestions] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -27,7 +27,7 @@ function QuestionCard({ selected }) {
             let query = supabase
                 .from("questions")
                 .select("*")
-                .eq("category", "기술");
+                .eq("category", category);
 
             // "ALL"이 아니면 name 필터 추가
             if (selected !== "ALL") {
@@ -47,7 +47,7 @@ function QuestionCard({ selected }) {
         };
 
         fetchTechQ();
-    }, [selected]);
+    }, [category, selected]);
 
     return (
         <div>
@@ -56,12 +56,15 @@ function QuestionCard({ selected }) {
                     key={questions[currentIndex].id}
                     className="border p-2 my-2 rounded"
                 >
+                    <h2 className="text-2xl my-4">
+                        {questions[currentIndex].name.toUpperCase()}
+                    </h2>
                     <h3>{questions[currentIndex].question}</h3>
                     <Answer
                         answer={questions[currentIndex].answer}
                         // id={questions[currentIndex].id}
                     />
-                    <div>
+                    <div className="flex justify-between">
                         <button
                             onClick={handlePrev}
                             className="mt-4 bg-blue-400 text-white py-2 px-4 rounded"

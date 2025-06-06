@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import SignUpPage from "./pages/SignUpPage";
 import LoginPage from "./pages/LoginPage";
 import TechQ from "./pages/Practice/TechQ";
-import JavaScriptQ from "./pages/Practice/JavaScriptQ";
+import LanguageQ from "./pages/Practice/LanguageQ";
 import CSQ from "./pages/Practice/CSQ";
 import EtcQ from "./pages/Practice/EtcQ";
 
@@ -22,8 +22,8 @@ function App() {
                         element={<TechQ />}
                     ></Route>
                     <Route
-                        path="/practice/JavaScriptQuestion"
-                        element={<JavaScriptQ />}
+                        path="/practice/LanguageQuestion"
+                        element={<LanguageQ />}
                     ></Route>
                     <Route
                         path="/practice/CSQuestion"
